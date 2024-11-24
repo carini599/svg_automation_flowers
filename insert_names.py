@@ -36,15 +36,18 @@ with open('flowers_24_new.svg') as f:
 
 # %%
 
-#Create PNG
-#svg2png(bytestring=open('flowers_24_new.svg').read(),write_to='flowers_24_new.png')
+import subprocess
 
-import aspose.words as aw
+#INKSCAPE_PATH = 'inkscape'  # for Linux
+INKSCAPE_PATH = r'C:\Program Files\Inkscape\bin\inkscape.exe'  # for Windows
 
-doc = aw.Document()
-builder = aw.DocumentBuilder(doc)
-shape = builder.insert_image("flowers_24_new.svg")
-shape.get_shape_renderer().save("flowers_24_new.png", aw.saving.ImageSaveOptions(aw.SaveFormat.PNG))
+subprocess.run([
+    INKSCAPE_PATH,
+    '--export-width=4000',
+    '--export-type=png',
+    f'--export-filename={"flowers_24_new.png"}',
+    'flowers_24_new.svg'
+])
 
 # Invert Colors
 
