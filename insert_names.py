@@ -4,6 +4,7 @@ import logging
 import cv2
 import numpy as np
 import subprocess
+import bpy
 
 # Import Names from name_list.csv
 names = pd.read_csv('name_list.csv', sep=';', header=0)
@@ -69,5 +70,25 @@ inverted = np.invert(image)
 cv2.imwrite('flowers_24_inv.jpg', inverted)
 
 logging.info('Inverted colors in PNG.')
+
+# %%
+
+# Start Blender and export flower pot with new image displacement as stl.
+
+BLENDER_PATH = r'C:\Program Files\Blender Foundation\Blender 3.6\blender.exe'  # for Windows
+
+# Set the path to the Blender file
+blend_file_path = "flowerpot.blend"
+stl_output_path = "flowerpot.stl"
+
+# Open the Blender file
+bpy.ops.wm.open_mainfile(filepath=blend_file_path)
+
+# Ensure all objects are selected for export
+bpy.ops.object.select_all(action='SELECT')
+
+# Export to STL
+bpy.ops.wm.stl_export(filepath=stl_output_path)
+
 
 # %%
