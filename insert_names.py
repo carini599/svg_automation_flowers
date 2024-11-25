@@ -22,7 +22,7 @@ open('flowers_24_new.svg', 'w').write(open('flowers_24.svg').read())
 
 # Change names in flower_24_new.svg
 with open('flowers_24_new.svg') as f: 
-    data = f.read()
+    template = f.read()
 
     for i in list(names['index']):
         index = names[names['index']==i]['index'].values[0]
@@ -38,18 +38,18 @@ with open('flowers_24_new.svg') as f:
         name_i = names[names['index']==i]['name'].values[0]
 
         # replcace placeholder with name from names list
-        data = data.replace(strtorepl,name_i)
+        template = template.replace(strtorepl,name_i)
         logging.info(f'{strtorepl} replaced by {name_i}.')
     
     # save changes to the file
     with open('flowers_24_new.svg', 'w') as f:
-        f.write(data)
+        f.write(template)
 
     logging.info('Names are changed and saved to flowers_24_new.svg')
 
 # %%
 
-# open Inkscape to  save image to png
+# Open Inkscape to  save image to png
 
 INKSCAPE_PATH = r'C:\Program Files\Inkscape\bin\inkscape.exe'  # for Windows
 
@@ -89,6 +89,3 @@ bpy.ops.object.select_all(action='SELECT')
 
 # Export to STL
 bpy.ops.wm.stl_export(filepath=stl_output_path)
-
-
-# %%
