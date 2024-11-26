@@ -41,4 +41,4 @@ For more information about my project please refer to my blog post on https://br
 
 ## Licensing, Authors, Acknowledgements <a name="licensing"></a>
 
-Please feel free to use my code for your own projects.
+Please feel free to use and modify the code for your own projects. However, all designs showcased in this repository are the sole property of the author and are protected by copyright; unauthorized use, reproduction, or distribution is strictly prohibited.
