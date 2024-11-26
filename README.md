@@ -22,9 +22,22 @@ insert_names.py: Script that alters my 3D-model by inserting names from a csv-fi
 
 ## Results <a name="results"></a>
 
+The following tasks are peformed by my Python script:
+* Import CSV with names
+* Open template and copy it to new file
+* Replace name placeholder by name
+* Save changes in new svg-file
+* Export image to png or jpg and invert colors.
+* Create stl with updated surface
+
+### Template
 ![Template](./flowers_24.jpg)
+### Modified Image
 ![Updated_Design](./flowers_24_inv.jpg)
+### Modified 3D Model
 ![Updated_3D_Model](./3d_model_flowerpot.png)
+
+For more information about my project please refer to my blog post on https://breuerei.de/automating-my-personalized-3d-designs-with-python/
 
 ## Licensing, Authors, Acknowledgements <a name="licensing"></a>
 
